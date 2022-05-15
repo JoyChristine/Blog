@@ -13,10 +13,18 @@
      
       <li><a href="{{url_for('main.profile',uname=current_user.username)}}" id="profile">Profile</a></li>
       &nbsp;&nbsp;
-      <li><a href="{{url_for('auth.logout')}}" id="signout" style="color:white">Sign out</a></li>
+      <li><a href="{{url_for('auth.logout')}}" id="signout" >Sign out</a></li>
       {% else %}
-      <button class="btn-navbar" id="signin"><a href="{{url_for('auth.login')}}" style="color:white">Sign in</a></button>
+      <li class="btn-navbar" style=" border: none;"><a href="{{url_for('auth.login')}}" id="signin">SIGN IN</a></li>
+      <li class="btn-navbar" style=" border: none;"><a href="{{url_for('auth.register')}}" id="signup">SIGN UP</a></li>
+      
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="#">Social Media</a></li>
+        <li><a class="dropdown-item" href="#">Google Ads</a></li>
+        <li><a class="dropdown-item" href="#">Facebook Ads</a></li>
+      </ul>
       {%endif%}
+      
     </ul>
 </div>
       

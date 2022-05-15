@@ -3,11 +3,44 @@
 {% block content%}
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
 <script src="{{url_for('static', filename='js/index.js')}}"></script>
-<h1 style="color:#fff">Blog</h1>
-<h2>Hlelee</h2>
-<a href="/newblog"> add</a>
-<div class="cards">
-    {{macro.displayBlogs(blogs)}}
+<a href="/newblog">Add blog</a>
+<div class="container">
+    <div class="row" id="blog-images" >
+        <div class="col-md-4">
+            <img src="{{url_for('static', filename='images/back1.jpg')}}" alt="logo" class="img-responsive">
+        </div>
+        <div class="col-md-4">
+            <img src="{{url_for('static', filename='images/back1.jpg')}}" alt="logo" class="img-responsive">
+        </div> <div class="col-md-4">
+            <img src="{{url_for('static', filename='images/back1.jpg')}}" alt="logo" class="img-responsive">
+        </div>
+    </div>
+    <br>
+    <br>
+    <!--subscribe  -->
+    <!-- <div class="subscribe" id="sub">
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <p class="navbar-brand">Want to get weekly updates of our blog?</p>
+            <form class="form-inline" style="float:right">
+              <input class="form-control mr-sm-2" type="search" placeholder="Your Email" aria-label="Subscribe">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Subscribe</button>
+            </form>
+          </nav>
+    </div> -->
+    <div class="row">
+        <div class="col-md-4">
+            {{macro.displayBlogs(blogs)}}
+        </div>
+    </div>
+
+
 </div>
+
+
+
+
+<!-- <div class="cards">
+    
+</div> -->
 
 {% endblock %}

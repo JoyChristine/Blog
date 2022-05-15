@@ -54,13 +54,16 @@ def update_profile(uname):
 def new_blog():
     blog_form = BlogForm()
     if blog_form.validate_on_submit():
-        blog = Blog(blog_title=blog_form.blog_title.data,
-                    content=blog_form.content.data,
-            )
-        db.session.add(blog)
-        db.session.commit()
+        content=blog_form.content.data
+        blog_title=blog_form.blog_title.data
+        new_blog = Blog(blog_title=blog_title,content=content,user=current_user)
+        new_blog.save_blog()
+        # blog = Blog(blog_title=blog_form.blog_title.data,content=blog_form.content.data,user_id=current_user.id)
+        # db.session.add(blog)
+        # db.session.commit()
       
-        return redirect(url_for('.index'))
+        return redirect(url_for('main.index'))
+        title = 'New Blog'
     return render_template('newblog.html', blog_form=blog_form,user = current_user)
 
 #comment

@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body{
-    background-color: #db4646;
+    background-color: #ffffff;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    overflow: auto;
 }
 
 #header{
@@ -27,20 +29,32 @@ body{
     
 }
 #nav{
-    background-color: blue;
+    background-color: #8c8f8c;
     width:100%;
 }
-#signin{
-    background-color: #db4646;
-    color: white;
+#signin,#profile,#signout,#signup{
+    
+    color: #343a35;
     padding: 10px;
     margin: 0;
     text-align: center;
-    font-family: 'Architects Daughter', cursive;
-    font-size: 20px;
-    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6vw;
     border: none;
     cursor: pointer;
     transition: 0.5s;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    text-decoration: none;
+    
+}
+/* index */
+/* #blog-images{
+    padding: 4vw ;
+} */
+#sub{
+    background-color: #3ec03e;
+   
+}
+.form-inline{
+    float: right;
+    padding: 0.5em 3em;
 }

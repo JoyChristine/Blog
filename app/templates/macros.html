@@ -7,7 +7,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="media-body">
-                    <div class="thumbnail" style="background-color: transparent;">
+                  
                         <div class="row">
                            
                             <div class="col-md-10">
@@ -15,18 +15,18 @@
                                     <h3 class="inline">
                                         <a class="blog-title" id="blog-title" href="#">{{blog.blog_title}}</a>
                                     </h3>
-                                    <small class="text-muted">  Posted on {{blog.posted.strftime('%d/%m/%Y')}}</small>
+                                    
                                    
                                 </p>
-                                <p class="blog-content">{{blog.content}}</p>
+                                <p class="blog-content" id="blog-content">{{blog.content}}</p>
                                 <small class="text-muted">
-                                    Author {{blog.user.username}}
+                                    Posted by {{blog.user.username}} on {{blog.posted.strftime('%d/%m/%Y')}}
                                 </small>
                                
                                 <br>
                                 <br>
                                 <div class="bottom">
-                                    <a href="{{url_for('main.comment',blog_id=blog.id)}}" class= "btn btn-primary btn-sm"> Comment</a>
+                                    <a href="{{url_for('main.comment',blog_id=blog.id)}}" id= "comment"> Comment</a>
                                     
                                </div>
                                
@@ -34,7 +34,7 @@
                             </div>
     
                         </div>
-                    </div>
+             
                     
                 </div>
 
@@ -48,17 +48,21 @@
 {% macro displayComments(all_comments) %}
 {% if all_comments %}
     {% for comment in all_comments %}
-    <div class="row" >
-        <div class="col-sm-12">
-        <div class="col-md-4" id="com" >
-                <b>Comment:{{comment.comment}}</b>
-                <br><br>
-                <i>By: {{comment.user.username}}</i>
-
-           
+   
+        <div class="row" >
+            
+            <div class="col-md-8" id="com" >
+                    <b>Comment:{{comment.comment}}</b>
+                    <br><br>
+                    <i>Posted by: {{comment.user.username}}</i>
+    
+               
+      
+            </div>  
+        </div>
+        
   
-        </div>  </div>
-    </div>
+  
 {% endfor %}
 {% else %}
 {% endif %}

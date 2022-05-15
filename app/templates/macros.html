@@ -3,44 +3,37 @@
     {% for blog in blogs %}
 
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/styles.css') }}">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="media-body">
-                  
-                        <div class="row">
-                           
-                            <div class="col-md-10">
-                                <p class="blog-metadata">
-                                    <h3 class="inline">
-                                        <a class="blog-title" id="blog-title" href="#">{{blog.blog_title}}</a>
-                                    </h3>
-                                    
-                                   
-                                </p>
-                                <p class="blog-content" id="blog-content">{{blog.content}}</p>
-                                <small class="text-muted">
-                                    Posted by {{blog.user.username}} on {{blog.posted.strftime('%d/%m/%Y')}}
-                                </small>
-                               
-                                <br>
-                                <br>
-                                <div class="bottom">
-                                    <a href="{{url_for('main.comment',blog_id=blog.id)}}" id= "comment"> Comment</a>
-                                    
-                               </div>
-                               
-                                
-                            </div>
-    
-                        </div>
-             
-                    
-                </div>
-
+ 
+<div class="container">
+    <div class="row" id ="row-blog">
+        
+        <div class="col-md-12" id="col-blog">
+            <p class="blog-metadata">
+                <h3 class="inline">
+                    <a class="blog-title" id="blog-title" href="#">{{blog.blog_title}}</a>
+                </h3>
+                
+                
+            </p>
+            <p class="blog-content" id="blog-content">{{blog.content}}</p>
+            <small class="text-muted" style="color: #fff">
+                Posted by {{blog.user.username}} on {{blog.posted.strftime('%d/%m/%Y')}}
+            </small>
+            
+            <br>
+            <br>
+            <div class="bottom">
+                <a href="{{url_for('main.comment',blog_id=blog.id)}}" id= "comment"> Comment</a>
+                
             </div>
+            
+            
         </div>
+
     </div>
+</div>
+
+             
     {% endfor %}
 
 {% endmacro %}
@@ -48,18 +41,19 @@
 {% macro displayComments(all_comments) %}
 {% if all_comments %}
     {% for comment in all_comments %}
-   
+    <div class="container">
         <div class="row" >
             
             <div class="col-md-8" id="com" >
                     <b>Comment:{{comment.comment}}</b>
                     <br><br>
                     <i>Posted by: {{comment.user.username}}</i>
-    
-               
-      
+                    <br>
+                    <div><a href="{{url_for('main.delete_comment',comment_id=comment.id)}}">Delete Comment</a></div>
             </div>  
         </div>
+    </div>
+        
         
   
   

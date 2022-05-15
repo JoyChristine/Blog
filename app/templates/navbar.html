@@ -1,14 +1,21 @@
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/styles.css') }}">
+<div class="header" id="header">
+  <h1 id="title">LIFESTYLE BLOG</h1>
+</div>
 <div class="container" id="nav">
+
+
+
     <ul class="nav navbar-nav navbar-right">
      
      
       {% if current_user.is_authenticated %}
      
-      <li><a href="{{url_for('main.profile',uname=current_user.username)}}" id="profile" style="color:white" >Profile</a></li>
+      <li><a href="{{url_for('main.profile',uname=current_user.username)}}" id="profile">Profile</a></li>
       &nbsp;&nbsp;
       <li><a href="{{url_for('auth.logout')}}" id="signout" style="color:white">Sign out</a></li>
       {% else %}
-      <button class="btn-navbar"><a href="{{url_for('auth.login')}}" style="color:white">Sign in</a></button>
+      <button class="btn-navbar" id="signin"><a href="{{url_for('auth.login')}}" style="color:white">Sign in</a></button>
       {%endif%}
     </ul>
 </div>

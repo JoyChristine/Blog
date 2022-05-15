@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Roboto:wght@400;500&display=swap');
 body{
-    background-image: url(../images/back3.jpg);
+    background-image: url(../images/back5.jpg),linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -31,7 +31,7 @@ body{
     
 }
 #nav{
-    background-color: #abcaab;
+    background-color: #ddecfe;
     width:100%;
 }
 #signin,#profile,#signout,#signup{
@@ -50,7 +50,7 @@ body{
 }
 /* SUBSCRIBE EMAIL */
 #sub{
-    background-color: #abcaab;
+    background-color: #ddecfe;
     padding: 0.5em 0.5em 0.5em 0.5em;
    
 }
@@ -70,7 +70,7 @@ body{
 }
 /* blog */
 #blog-title{
-    color: #000000;
+    color: #ffffff;
     text-transform: uppercase;
     font-family: futura-pt;
     text-decoration: underline;
@@ -81,8 +81,8 @@ body{
     font-size: 1.3vw;
 
 }
-#blogs{
-    margin-top: 2vw;
+/* #blogs{
+    background-color: #def9fb;
     
 }
 #blogs .thumbnail{
@@ -91,7 +91,7 @@ body{
    
 }
 /*  */
-#com-form{
+/* #com-form{
     border:1px solid #ffffff;
     
    
@@ -104,18 +104,29 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 1.3vw;
     
-    color: rgb(0, 0, 0);
-}
+    color: rgb(255, 255, 255);
+} 
 #comment:hover{
     color: #2e65ca;
+}*/
+#row-blog{
+    display: flex;
+    margin-right: -10px;
+    margin-left: -10px;
+    
+   
 }
-#com{
+#col-blog{
+
     border-radius: 2vw;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.4vw;
-    border: 1px solid rgb(0, 0, 0);
-    margin-top:2vw;
-    color: rgb(0, 0, 0);
+    /* font-size: 1.4vw; */
+    border: 1px solid rgb(255, 255, 255);
+    margin-top:3vw;
+    color: rgb(255, 255, 255);
+} 
+#dis-com{
+    color: rgb(255, 255, 255);
 }
 /* #c{
     background-color:#70aa82;

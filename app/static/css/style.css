@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Roboto:wght@400;500&display=swap');
 body{
-    background-color: #ffffff;
+    background-image: url(../images/back3.jpg);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -9,7 +11,7 @@ body{
 }
 
 #header{
-    background-image: url(../images/back1.jpg);
+    background-image: url(../images/background1.jpg);
     /* height:40vh;
     width: 100%; */
     background-repeat: no-repeat;
@@ -29,7 +31,7 @@ body{
     
 }
 #nav{
-    background-color: #8c8f8c;
+    background-color: #abcaab;
     width:100%;
 }
 #signin,#profile,#signout,#signup{
@@ -46,15 +48,98 @@ body{
     text-decoration: none;
     
 }
-/* index */
-/* #blog-images{
-    padding: 4vw ;
-} */
+/* SUBSCRIBE EMAIL */
 #sub{
-    background-color: #3ec03e;
+    background-color: #abcaab;
+    padding: 0.5em 0.5em 0.5em 0.5em;
    
 }
+.navbar-brand{
+    padding: 1.4em ;
+
+}
 .form-inline{
-    float: right;
-    padding: 0.5em 3em;
+    float:right;
+    /* margin-right: 7%; */
+    padding: 1.4em 5em 0.5em 0.5em;
+}
+
+#btn-sub{
+    background-color: #6dab82;
+    color: #fff;
+}
+/* blog */
+#blog-title{
+    color: #000000;
+    text-transform: uppercase;
+    font-family: futura-pt;
+    text-decoration: underline;
+    font-size: 2vw;
+}
+#blog-content{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vw;
+
+}
+#blogs{
+    margin-top: 2vw;
+    
+}
+#blogs .thumbnail{
+    background-color: red;
+    border: 1px solid #070707;
+   
+}
+/*  */
+#com-form{
+    border:1px solid #ffffff;
+    
+   
+    padding: 1em;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: auto;
+}
+#comment{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vw;
+    
+    color: rgb(0, 0, 0);
+}
+#comment:hover{
+    color: #2e65ca;
+}
+#com{
+    border-radius: 2vw;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4vw;
+    border: 1px solid rgb(0, 0, 0);
+    margin-top:2vw;
+    color: rgb(0, 0, 0);
+}
+/* #c{
+    background-color:#70aa82;
+} */
+
+/* ***********QUOTE */
+#random{
+    border:1px solid #fff;
+    background-repeat: no-repeat;
+    padding: 10px;
+    margin: 0;
+    background-size: cover;
+    color:#fff;
+    border-radius: 2vw;
+}
+#quote{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5vw;
+}
+/* add blog */
+
+#new a{
+    color: #fff;
+    border: 1px solid #fff;
+    padding:1vw 1vw 1vw 1vw;
+    
 }

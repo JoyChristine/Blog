@@ -3,9 +3,13 @@
 {% block content%}
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
 <script src="{{url_for('static', filename='js/index.js')}}"></script>
-<a href="/newblog">Add blog</a>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+
 <div class="container">
-    <div class="row" id="blog-images" >
+    <!-- <div class="row" id="blog-images" >
         <div class="col-md-4">
             <img src="{{url_for('static', filename='images/back1.jpg')}}" alt="logo" class="img-responsive">
         </div>
@@ -14,24 +18,49 @@
         </div> <div class="col-md-4">
             <img src="{{url_for('static', filename='images/back1.jpg')}}" alt="logo" class="img-responsive">
         </div>
+    </div> -->
+    <!-- <br>
+    <br> -->
+    <!--subscribe  -->
+    
+   <br>
+    <div class="random" id="random">
+        <h4>Random quotes to get you motivated</h4>
+        <p id="quote">Quote: {{quotes.quote}}</p>
+        <p><strong>By : {{quotes.author}}</strong></p>
+    
     </div>
     <br>
     <br>
-    <!--subscribe  -->
-    <!-- <div class="subscribe" id="sub">
+    <div class="subscribe" id="sub">
         <nav class="navbar navbar-light bg-light justify-content-between">
             <p class="navbar-brand">Want to get weekly updates of our blog?</p>
-            <form class="form-inline" style="float:right">
-              <input class="form-control mr-sm-2" type="search" placeholder="Your Email" aria-label="Subscribe">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Subscribe</button>
+            <form class="form-inline" >
+              <input class="form-control" type="search" placeholder="Your Email" aria-label="Subscribe">
+              <button class="btn" id="btn-sub" type="submit">Subscribe</button>
             </form>
           </nav>
-    </div> -->
-    <div class="row">
-        <div class="col-md-4">
-            {{macro.displayBlogs(blogs)}}
+    </div>
+    <br>
+
+    <h4 id="new" ><a href="/newblog">Add your own blog </a></h4>
+
+    <br>
+    <div class="row" id="blogs-row" >
+        <div class="col-md-6">
+            
+               
+                    {{macro.displayBlogs(blogs)}}
+                
+            
+            
         </div>
     </div>
+        
+        
+       
+  
+   
 
 
 </div>

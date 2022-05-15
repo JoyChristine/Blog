@@ -1,0 +1,74 @@
+body{
+    background-color: #f55409;
+}
+
+.nav li a:hover{
+    background-color: #f59709;
+}
+#container{
+    border:1px solid rgb(255, 255, 255);
+    border-radius :20px;
+    width:50vw;
+    margin:5vw auto;
+    padding:20px;
+    text-align:center;
+    background : transparent;
+}
+  
+#timer{ 
+    color:rgb(255, 255, 255); 
+    font-size:50px; 
+    margin:10px auto;
+    border : 5px solid rgb(255, 255, 255);
+    border-radius:50%;
+    width:200px;
+    height:200px;
+    overflow:hidden;
+    position:relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor:default;
+}
+  
+#time{
+    margin-top:70px;
+    z-index : 1;
+    position:relative;
+}
+  
+#filler{
+    background : #ddffcc;
+    height: 0px;
+    width: 200px;
+    position:absolute;
+    bottom:0;
+}
+  
+#buttons button { 
+    background:#ffffff; 
+    border:none; 
+    color:rgb(66, 91, 233); 
+    cursor:pointer; 
+    padding:5px; 
+    width:90px; 
+    margin:2vw  2vw 2vw auto;
+    font-size:14px;
+    height : 50px;
+    border-radius : 50px;
+}
+  
+#buttons button#shortBreak{
+    background : rgb(255, 255, 255);
+    
+}
+
+  #buttons button#longBreak{
+    background : rgb(255, 255, 255);
+  }
+  
+  #buttons button#stop{
+    background : rgb(255, 255, 255);
+  }
+  

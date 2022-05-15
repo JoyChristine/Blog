@@ -5,6 +5,7 @@ from flask_login import login_required,current_user
 from ..models import User,Blog,Comment
 from .forms import UpdateProfile,BlogForm,CommentForm
 from .. import db
+from ..requests import get_randomquotes
 
 
 
@@ -13,8 +14,9 @@ def index():
     
     blogs = Blog.query.all()
     message = "Hello World" 
+    quotes = get_randomquotes()
 
-    return render_template('index.html', message=message,blogs=blogs)
+    return render_template('index.html', message=message,blogs=blogs,quotes=quotes)
 
 
 
@@ -77,7 +79,7 @@ def comment(blog_id):
 
     if comment_form.validate_on_submit():
         comment = comment_form.comment.data
-        new_comment = Comment(comment=comment,blog_id = blog_id)
+        new_comment = Comment(comment=comment,blog_id = blog_id,user=current_user)
         new_comment.save_comment()
        
        

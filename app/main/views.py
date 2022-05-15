@@ -1,5 +1,5 @@
 from curses import flash
-from flask import render_template,abort,redirect, url_for
+from flask import render_template,abort,redirect, url_for,request
 from . import main 
 from flask_login import login_required,current_user
 from ..models import User,Blog,Comment
@@ -67,9 +67,32 @@ def new_blog():
         return redirect(url_for('main.index'))
         title = 'New Blog'
     return render_template('newblog.html', blog_form=blog_form,user = current_user)
+# update blog
+@main.route('/blog/<int:id>/update', methods=['GET', 'POST'])
+@login_required
+def update_blog(blog_id):
+    blog = Blog.query.get(blog_id)
+    blog_form = BlogForm()
+
+
+    if blog is None and blog.user != current_user:
+        abort(404)
+
+    if blog_form.validate_on_submit():
+        blog.blog_title = blog_form.blog_title.data
+        blog.content = blog_form.content.data
+        db.session.commit()
+       
+        return redirect(url_for('main.index'))
+    elif request.method == 'GET':
+        blog_form.blog_title.data = blog.blog_title
+        blog_form.content.data = blog.content
+
+    return render_template('newblog.html', blog_form=blog_form,blog=blog)
+
 
 #comment
-@main.route('/blog/<int:blog_id>/comment', methods=['GET', 'POST'])
+@main.route('/comment/<int:blog_id>', methods=['GET', 'POST'])
 @login_required 
 def comment(blog_id):
 
@@ -88,3 +111,14 @@ def comment(blog_id):
     all_comments =  Comment.query.filter_by(blog_id=blog_id).all()
     title = f'{blog.blog_title}'
     return render_template('comment.html',comment_form=comment_form,blog=blog,comment=all_comments,title=title)
+
+# delete comment
+@main.route('/comment/delete/<int:comment_id>', methods=['GET', 'POST'])
+@login_required
+def delete_comment(comment_id):
+    comments = Comment.query.filter_by(id = comment_id).all()
+    for comment in comments:
+        db.session.delete(comment)
+        db.session.commit()
+    
+    return redirect(url_for('main.index'))

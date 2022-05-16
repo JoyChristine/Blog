@@ -7,13 +7,14 @@ Blog is a web application that will help users list and preview blogs,add blogs 
 ## Features
 <br>
 A user can;
+
 * View the blog posts on the site
 * Comment on blog posts
 * View the most recent posts
 * See random quotes on the site
 * Sign in to the blog.
 * Create a blog from the application.
-* 
+
 The writer can;
 
 * Delete comments that they find insulting or degrading.

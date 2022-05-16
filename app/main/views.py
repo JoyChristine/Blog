@@ -126,8 +126,8 @@ def comment(blog_id):
         return redirect(url_for('main.comment',blog_id=blog_id))
 
     all_comments =  Comment.query.filter_by(blog_id=blog_id).all()
-    title = f'{blog.blog_title}'
-    return render_template('comment.html',comment_form=comment_form,blog=blog,comment=all_comments,title=title)
+    # title = f'{blog.blog_title}'
+    return render_template('comment.html',comment_form=comment_form,blog=blog,comment=all_comments)
 
 # delete comment
 @main.route('/comment/delete/<int:comment_id>', methods=['GET', 'POST'])

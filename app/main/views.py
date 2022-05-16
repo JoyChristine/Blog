@@ -6,7 +6,7 @@ from ..models import User,Blog,Comment
 from .forms import UpdateProfile,BlogForm,CommentForm
 from .. import db
 from ..requests import get_randomquotes
-from ..email import mail_message
+# from ..email import mail_message
 
 
 @main.route ('/',methods=['GET','POST'])
@@ -75,8 +75,8 @@ def update_blog(blog_id):
     blog_form = BlogForm()
 
 
-    if blog is None and blog.user != current_user:
-        abort(404)
+    if blog.user != current_user:
+        return render_template('four.html',message = 'Unauthorized Access')
 
     if blog_form.validate_on_submit():
         blog.blog_title = blog_form.blog_title.data
@@ -97,7 +97,7 @@ def delete_blog(blog_id):
     blog = Blog.query.filter_by(id=blog_id).first()
 
     if blog.user != current_user:
-        abort(404)
+         return render_template('four.html',message = 'Unauthorized Access')
 
     db.session.delete(blog)
     db.session.commit()
@@ -133,7 +133,11 @@ def comment(blog_id):
 @main.route('/comment/delete/<int:comment_id>', methods=['GET', 'POST'])
 @login_required
 def delete_comment(comment_id):
-    comments = Comment.query.filter_by(id = comment_id).all()
+    
+    comments = Comment.query.filter_by(id = comment_id).first()
+    if comments.user != current_user:
+            return render_template('four.html',message = 'Unauthorized Access')
+
     for comment in comments:
         db.session.delete(comment)
         db.session.commit()

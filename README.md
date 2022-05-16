@@ -1,1 +1,68 @@
-# pomodoro
+
+## Description
+
+Blog is a web application that will help users list and preview blogs,add blogs etc.
+
+
+## Features
+<br>
+A user can;
+* View the blog posts on the site
+* Comment on blog posts
+* View the most recent posts
+* See random quotes on the site
+* Sign in to the blog.
+* Create a blog from the application.
+* 
+The writer can;
+
+* Delete comments that they find insulting or degrading.
+* Update or delete blogs they have created.
+
+
+<!-- # Behavior Driven Development
+| Behavior            | Input                         | Output                        |
+| ------------------- | ----------------------------- | ----------------------------- |
+| View All News Sources | Default Home Page(right)| Displays all news sources |
+|View Top Headlines | Default home page (left)| Displays Top Headlines articles |
+| View Categories of news sources| Click on any category on teh navbar | Redirects to the specified category articles page|
+| Search for an article by keyword | Type any keyword in `search bar` e.g. `Kenya`| Redirects to search page with all the search results for Kenya|
+
+## View Live Site here
+View the complete site [here](https://newsapp-joy.herokuapp.com/) -->
+
+
+## Technologies Used
+    - Python 3.8
+    - Flask Framework
+    - HTML, CSS and Bootstrap
+    
+    
+## Set-up and Installation
+Prepare the environment variables.
+
+    (virtual)$exportDATABASE_URL='postgresqlpsycopg2://username:password@localhost/name_of_database'`<br/>
+    `(virtual)$ export SECRET_KEY='Your secret key'
+
+Run Database Migrations.
+
+    (virtual)$ python manage.py db init
+    (virtual)$ python manage.py db migrate -m "Initial migration"
+    (virtual)$ python manage.py db upgrade
+
+Run the app.
+
+    (virtual)$ touch start.sh
+
+    Put #!/usr/bin/env bash as the first line in start.sh
+    Put python3.8 manage.py server as the second line in start.sh
+
+    (virtual)$ chmod a+x start.sh
+    (virtual)$ ./start.sh
+
+
+## Contributors
+    - Joy Christine Nduta Kimani
+
+### Contact Information
+joychristin2@gmail.com

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+{% block content%}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+<script src="{{url_for('static', filename='js/index.js')}}"></script>
+<div class="err">
+    <H1 id="error" style="color: rgb(189, 3, 3);">Oops! You have to be writer of a blog to delete or update it & also to delete a comment </H1>>
+
+</div>
+
+
+{% endblock %}

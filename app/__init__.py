@@ -19,7 +19,6 @@ def create_app(config_name):
     # Creating the app configurations
     app.config.from_object(config_options[config_name])
 
-    # configure_uploads(app,photos)
 
     # Initializing flask extensions
     bootstrap.init_app(app)
